@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/Navy"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/imgBtnClear"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        style="@style/ImageClear"/>
+
+    <ImageButton
+        android:id="@+id/imgBtnAdd"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        style="@style/ImageNew"/>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:text="Matemática"
+        style="@style/Letra4"/>
+
+    <TextView
+        android:id="@+id/txtCredits"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:text="12"
+        style="@style/Letra"/>
+
+    <TextView
+        android:id="@+id/txtGrade"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1.5"
+        android:text="5"
+        style="@style/Letra"/>
+
+</LinearLayout>

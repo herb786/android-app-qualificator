@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="titleBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/Navy</item>
+        <item name="android:titleTextStyle">@style/MyTitle</item>
+    </style>
+
+    <style name="MyTitle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="Letra5">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">#000000 </item>
+    </style>
+
+    <style name="Letra4">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">#ffffff </item>
+    </style>
+
+    <style name="Letra">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">#ffffff </item>
+    </style>
+
+    <style name="Letra2">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:maxLength">5</item>
+    </style>
+
+    <style name="Letra3">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:maxLength">5</item>
+    </style>
+
+    <style name="ImageClear">
+        <item name="android:src">@drawable/bin_handset</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="ImageNew">
+        <item name="android:src">@drawable/edit_handset</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="ImageLeft">
+        <item name="android:src">@drawable/minus_handset</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="ImageRight">
+        <item name="android:src">@drawable/plus_handset</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="headerCourseList">
+       <item name="android:textColor">#fff</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+</resources>

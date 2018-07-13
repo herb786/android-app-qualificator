@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/courseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <TextView
+        android:id="@+id/txtCourse"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guidelineOne"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/edtWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escrito 1"
+        style="@style/Letra5"/>
+
+    <EditText
+        android:id="@+id/edtWeight"
+        app:layout_constraintLeft_toRightOf="@id/guidelineOne"
+        app:layout_constraintRight_toLeftOf="@id/guidelineTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16.66"
+        style="@style/Letra3"
+        android:imeOptions="actionDone"/>
+
+    <ImageButton
+        app:layout_constraintLeft_toRightOf="@id/guidelineTwo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/edtWeight"
+        android:id="@+id/btnScoreDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/ImageLeft"/>
+
+    <EditText
+        android:id="@+id/edtScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/btnScoreDown"
+        android:text="12"
+        style="@style/Letra2"
+        android:imeOptions="actionDone"/>
+
+    <ImageButton
+        android:id="@+id/btnScoreUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/edtScore"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/edtWeight"
+        style="@style/ImageRight"/>
+
+
+</android.support.constraint.ConstraintLayout>

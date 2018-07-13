@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="indicadores">
+        <item>Escrito 1</item>
+        <item>Escrito 2</item>
+        <item>Oral 1</item>
+        <item>Oral 2</item>
+        <item>Trabajo 1</item>
+        <item>Trabajo 2</item>
+        <item>Bonus</item>
+    </array>
+
+
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Qualificator</string>
+    <string name="appname">Apruébame</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="guardar">Guardar</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6942594970719139/7567486801</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="curso">CURSO</string>
+    <string name="credito">CREDITO</string>
+    <string name="nota">NOTA</string>
+    <string name="promedio_final">Promedio Final</string>
+    <string name="presente_periodo">Presente Período Lectivo</string>
+    <string name="creditos">CREDITOS</string>
+    <string name="indicador">INDICADOR</string>
+    <string name="peso">PESO (%)</string>
+    <string name="promedio">Promedio</string>
+    <string name="info">Info</string>
+</resources>
