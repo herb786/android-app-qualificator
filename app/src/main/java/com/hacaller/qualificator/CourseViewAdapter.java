@@ -13,8 +13,9 @@ public class CourseViewAdapter extends RecyclerView.Adapter<CourseViewHolder> {
     List<CourseModel> courseModelList;
     ICourseEvents courseEvents;
 
-    public CourseViewAdapter(List<CourseModel> courseModelList) {
+    public CourseViewAdapter(List<CourseModel> courseModelList, ICourseEvents courseEvents) {
         this.courseModelList = courseModelList;
+        this.courseEvents = courseEvents;
     }
 
     @NonNull
@@ -39,9 +40,5 @@ public class CourseViewAdapter extends RecyclerView.Adapter<CourseViewHolder> {
         this.courseModelList.clear();
         this.courseModelList.addAll(courseModelList);
         notifyDataSetChanged();
-    }
-
-    public void setCourseEvents(ICourseEvents courseEvents) {
-        this.courseEvents = courseEvents;
     }
 }

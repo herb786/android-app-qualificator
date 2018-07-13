@@ -2,7 +2,9 @@ package com.hacaller.qualificator;
 
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
+import android.util.AttributeSet;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -19,21 +21,37 @@ public class CourseInputView extends ConstraintLayout implements View.OnClickLis
     TextView txtCourse;
     EditText edtScore;
     EditText edtWeight;
+    View view;
 
     IComputeScores computeScores;
 
     public CourseInputView(Context context) {
         super(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        view = inflater.inflate(R.layout.metric_item_layout, this, true);
     }
+
+    public CourseInputView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        view = inflater.inflate(R.layout.metric_item_layout, this, true);
+    }
+
+    public CourseInputView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        view = inflater.inflate(R.layout.metric_item_layout, this, true);
+    }
+
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        btnScoreUp = (ImageButton) getViewById(R.id.btnScoreUp);
-        btnScoreDown = (ImageButton) getViewById(R.id.btnScoreDown);
-        txtCourse = (TextView) getViewById(R.id.txtCourse);
-        edtScore = (EditText) getViewById(R.id.edtScore);
-        edtWeight = (EditText) getViewById(R.id.edtWeight);
+        btnScoreUp = view.findViewById(R.id.btnScoreUp);
+        btnScoreDown = view.findViewById(R.id.btnScoreDown);
+        txtCourse = view.findViewById(R.id.txtCourse);
+        edtScore = view.findViewById(R.id.edtScore);
+        edtWeight = view.findViewById(R.id.edtWeight);
         btnScoreUp.setOnClickListener(this);
         btnScoreDown.setOnClickListener(this);
 
@@ -122,4 +140,6 @@ public class CourseInputView extends ConstraintLayout implements View.OnClickLis
             edtWeight.setVisibility(INVISIBLE);
         }
     }
+
+
 }

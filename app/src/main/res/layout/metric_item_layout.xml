@@ -10,14 +10,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.40" />
+        app:layout_constraintGuide_percent="0.30" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guidelineTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.70" />
+        app:layout_constraintGuide_percent="0.60" />
 
     <TextView
         android:id="@+id/txtCourse"
@@ -28,15 +28,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Escrito 1"
+        android:textColor="#008"
         style="@style/Letra5"/>
 
     <EditText
         android:id="@+id/edtWeight"
         app:layout_constraintLeft_toRightOf="@id/guidelineOne"
         app:layout_constraintRight_toLeftOf="@id/guidelineTwo"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:text="16.66"
+        android:textColor="#800"
         style="@style/Letra3"
         android:imeOptions="actionDone"/>
 
@@ -51,7 +53,7 @@
 
     <EditText
         android:id="@+id/edtScore"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/btnScoreDown"
         android:text="12"

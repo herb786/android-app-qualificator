@@ -9,22 +9,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingTop="50dp">
+        android:padding="15dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp">
+            android:paddingBottom="10dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/curso"
                 android:textSize="18sp" />
 
@@ -32,7 +31,7 @@
                 android:id="@+id/edtCourseName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="text"
@@ -45,14 +44,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp">
+            android:paddingBottom="10dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/creditos"
                 android:textSize="18sp" />
 
@@ -60,7 +58,7 @@
                 android:id="@+id/edtCourseCredit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="numberDecimal"
@@ -74,33 +72,34 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
                 android:layout_gravity="center"
-                android:width="100dp"
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/indicador"
-                android:textColor="@color/Black"
+                android:textColor="#008"
                 android:textSize="18sp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
                 android:layout_gravity="center"
-                android:width="80dp"
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
+                android:textColor="#800"
                 android:text="@string/peso"
                 android:textSize="18sp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="4"
                 android:layout_gravity="center"
-                android:width="80dp"
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
@@ -149,15 +148,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:background="@color/tNavy"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/promedio"
+                android:layout_marginRight="20dp"
                 android:textSize="18sp" />
 
             <ImageButton

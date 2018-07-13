@@ -24,6 +24,8 @@ public class CourseViewHolder extends RecyclerView.ViewHolder implements View.On
         txtName = itemView.findViewById(R.id.txtName);
         txtCredits = itemView.findViewById(R.id.txtCredits);
         txtGrade = itemView.findViewById(R.id.txtGrade);
+        imgBtnAdd.setOnClickListener(this);
+        imgBtnClear.setOnClickListener(this);
     }
 
     public void bindData(int pos, CourseModel courseModel){

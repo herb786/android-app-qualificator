@@ -63,11 +63,15 @@ public class CourseFragment extends Fragment implements IComputeScores {
             courseInputViews.get(pos).setIndicatorName(indictaors.get(pos));
             courseInputViews.get(pos).setScore(metric.getScore());
             courseInputViews.get(pos).setWeigth(metric.getWeight());
+            courseInputViews.get(pos).setComputeScores(this);
+            courseInputViews.get(pos).setPosition(pos);
             pos++;
         }
         courseInputViews.get(6).setIndicatorName(indictaors.get(6));
         courseInputViews.get(6).showWeight(false);
         courseInputViews.get(6).setScore(courseModel.getBonus());
+        courseInputViews.get(6).setComputeScores(this);
+        courseInputViews.get(6).setPosition(6);
 
         calculateMean();
 

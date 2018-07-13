@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
 import java.io.BufferedReader;
@@ -72,14 +73,14 @@ public class QualificatorActivity extends FragmentActivity implements ICourseEve
 
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
+        //mAdView.setAdSize(AdSize.BANNER);
         mAdView.loadAd(adRequest);
     }
 
     public void loadCourses(){
         if (courseModels != null && courseModels.size() > 0) {
             courseModel = courseModels.get(0);
-            adapter = new CourseViewAdapter(courseModels);
-            adapter.setCourseEvents(this);
+            adapter = new CourseViewAdapter(courseModels, this);
             recyclerView.setAdapter(adapter);
             txtTotalAvg.setText(String.format(Locale.ENGLISH, "%.2f", totalAvg()));
         }
@@ -101,9 +102,11 @@ public class QualificatorActivity extends FragmentActivity implements ICourseEve
 
     @Override
     public void onClickEditCourse(int pos, CourseModel courseModel) {
+        setCurrentCourseModel(pos);
         CourseFragment courseFragment = new CourseFragment();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, courseFragment)
+                .add(R.id.fragment_container, courseFragment)
+                .addToBackStack("CourseFragment")
                 .commit();
     }
 
