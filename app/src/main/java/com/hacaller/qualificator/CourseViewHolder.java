@@ -33,7 +33,7 @@ public class CourseViewHolder extends RecyclerView.ViewHolder implements View.On
         this.courseModel = courseModel;
         txtName.setText(courseModel.getName());
         txtCredits.setText(courseModel.getCreditsAsString());
-        txtGrade.setText(courseModel.getOverallAsString());
+        txtGrade.setText(String.format("%.2f",courseModel.getOverall()));
     }
 
     @Override

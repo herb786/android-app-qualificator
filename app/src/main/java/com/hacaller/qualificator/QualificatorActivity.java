@@ -104,6 +104,9 @@ public class QualificatorActivity extends FragmentActivity implements ICourseEve
     public void onClickEditCourse(int pos, CourseModel courseModel) {
         setCurrentCourseModel(pos);
         CourseFragment courseFragment = new CourseFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("COURSEPOSITION", pos);
+        courseFragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, courseFragment)
                 .addToBackStack("CourseFragment")

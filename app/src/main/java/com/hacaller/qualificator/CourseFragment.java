@@ -1,6 +1,7 @@
 package com.hacaller.qualificator;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -49,6 +50,13 @@ public class CourseFragment extends Fragment implements IComputeScores {
     List<CourseMetricModel> metrics;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.position = getArguments().getInt("COURSEPOSITION");
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View myCourseView = inflater.inflate(R.layout.fragment_curso_layout, container, false);
         ButterKnife.bind(this, myCourseView);
@@ -82,6 +90,8 @@ public class CourseFragment extends Fragment implements IComputeScores {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (EditorInfo.IME_ACTION_DONE == (actionId & EditorInfo.IME_MASK_ACTION)) {
                     courseModel.setName(v.getText().toString());
+                    ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+
                 }
                 return false;
             }
@@ -94,6 +104,8 @@ public class CourseFragment extends Fragment implements IComputeScores {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (EditorInfo.IME_ACTION_DONE == (actionId & EditorInfo.IME_MASK_ACTION)) {
                     courseModel.setCredits(v.getText().toString());
+                    ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+
                 }
                 return false;
             }
@@ -108,6 +120,8 @@ public class CourseFragment extends Fragment implements IComputeScores {
                 mean -= 0.5;
                 txtCursoPromedio.setText(String.valueOf(mean));
                 courseModel.setOverall(String.valueOf(mean));
+                ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+
             }
         });
 
@@ -117,6 +131,8 @@ public class CourseFragment extends Fragment implements IComputeScores {
                 mean += 0.5;
                 txtCursoPromedio.setText(String.valueOf(mean));
                 courseModel.setOverall(String.valueOf(mean));
+                ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+
             }
         });
 
@@ -158,5 +174,7 @@ public class CourseFragment extends Fragment implements IComputeScores {
         average += courseModel.getBonus();
         txtCursoPromedio.setText(String.format(Locale.ENGLISH, "%.1f", average));
         courseModel.setOverall(average);
+        ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+
     }
 }
