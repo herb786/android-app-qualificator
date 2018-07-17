@@ -75,8 +75,8 @@ public class QualificatorActivity extends FragmentActivity implements ICourseEve
 
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId(getString(R.string.banner_ad_unit_id));
+        //mAdView.setAdSize(AdSize.BANNER);
+        //mAdView.setAdUnitId(getString(R.string.banner_ad_unit_id));
         mAdView.loadAd(adRequest);
     }
 
