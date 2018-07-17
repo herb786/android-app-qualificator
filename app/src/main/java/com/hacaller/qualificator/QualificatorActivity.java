@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -55,6 +56,7 @@ public class QualificatorActivity extends FragmentActivity implements ICourseEve
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qualificator);
+        MobileAds.initialize(this, getString(R.string.admob_app_id));
         ButterKnife.bind(this);
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -73,7 +75,8 @@ public class QualificatorActivity extends FragmentActivity implements ICourseEve
 
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        //mAdView.setAdSize(AdSize.BANNER);
+        mAdView.setAdSize(AdSize.BANNER);
+        mAdView.setAdUnitId(getString(R.string.banner_ad_unit_id));
         mAdView.loadAd(adRequest);
     }
 
