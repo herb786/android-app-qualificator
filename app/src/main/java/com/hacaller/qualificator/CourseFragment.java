@@ -3,6 +3,8 @@ package com.hacaller.qualificator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,8 +91,10 @@ public class CourseFragment extends Fragment implements IComputeScores {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (EditorInfo.IME_ACTION_DONE == (actionId & EditorInfo.IME_MASK_ACTION)) {
-                    courseModel.setName(v.getText().toString());
-                    ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+                    if (v.getText().toString().length() > 0 && v.getText().charAt(0) != 0x2e) {
+                        courseModel.setName(v.getText().toString());
+                        ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+                    }
 
                 }
                 return false;
@@ -99,12 +103,35 @@ public class CourseFragment extends Fragment implements IComputeScores {
         //</editor-fold>
 
         //<editor-fold des=changeCredit>
+        edtCourseCredit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().length() > 0  && s.toString().charAt(0) != 0x2e){
+                    courseModel.setCredits(s.toString());
+                    ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+                }
+
+            }
+        });
+
         edtCourseCredit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (EditorInfo.IME_ACTION_DONE == (actionId & EditorInfo.IME_MASK_ACTION)) {
-                    courseModel.setCredits(v.getText().toString());
-                    ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+                    if (v.getText().toString().length() > 0 && v.getText().charAt(0) != 0x2e) {
+                        courseModel.setCredits(v.getText().toString());
+                        ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
+                    }
 
                 }
                 return false;
@@ -157,23 +184,12 @@ public class CourseFragment extends Fragment implements IComputeScores {
     public void computeMean(int pos, float score, float weight) {
         metrics.get(pos).setScore(score);
         metrics.get(pos).setWeight(weight);
+        courseModel.calculatOverall();
         calculateMean();
     }
 
     public void calculateMean() {
-        int i = 0;
-        float weigth = 0;
-        float score = 0;
-        float average = 0;
-        while (i < 6) {
-            weigth = metrics.get(i).getWeight();
-            score = metrics.get(i).getScore();
-            average += weigth * score / 100;
-            ++i;
-        }
-        average += courseModel.getBonus();
-        txtCursoPromedio.setText(String.format(Locale.ENGLISH, "%.1f", average));
-        courseModel.setOverall(average);
+        txtCursoPromedio.setText(String.format(Locale.ENGLISH, "%.1f", courseModel.getOverall()));
         ((QualificatorActivity) getActivity()).updateCourseModel(position, courseModel);
 
     }

@@ -59,9 +59,11 @@ public class CourseInputView extends ConstraintLayout implements View.OnClickLis
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (EditorInfo.IME_ACTION_DONE == (actionId & EditorInfo.IME_MASK_ACTION)) {
-                    weigth = Float.valueOf(v.getText().toString());
-                    if (computeScores != null)
-                        computeScores.computeMean(position, score, weigth);
+                    if (v.getText().toString().length() > 0 && v.getText().charAt(0) != 0x2e){
+                        weigth = Float.valueOf(v.getText().toString());
+                        if (computeScores != null)
+                            computeScores.computeMean(position, score, weigth);
+                    }
                 }
                 return false;
             }

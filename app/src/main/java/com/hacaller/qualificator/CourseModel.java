@@ -1,6 +1,7 @@
 package com.hacaller.qualificator;
 
 import java.util.List;
+import java.util.Locale;
 
 public class CourseModel {
 
@@ -16,6 +17,7 @@ public class CourseModel {
 
     public void setCourseMetricModels(List<CourseMetricModel> courseMetricModels) {
         this.courseMetricModels = courseMetricModels;
+        calculatOverall();
     }
 
     public float getBonus() {
@@ -24,6 +26,7 @@ public class CourseModel {
 
     public void setBonus(String bonus) {
         this.bonus = Float.parseFloat(bonus);
+        calculatOverall();
     }
 
     public String getName() {
@@ -72,6 +75,14 @@ public class CourseModel {
 
     public void setOverall(float overall) {
         this.overall = overall;
+    }
+
+    public void calculatOverall() {
+        this.overall = 0f;
+        for (CourseMetricModel metric : courseMetricModels){
+            this.overall += metric.getAverage();
+        }
+        this.overall = this.overall + this.bonus;
     }
 
 }
